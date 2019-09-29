@@ -1,0 +1,42 @@
+<div class="header">
+    <div class="menu_header">
+        <div class="spacer">
+     </div>
+     <div *ngIf="loggedInUser!=null">
+            <span class="spacer"></span> 
+            <span class="loggedInUserDetails"> Welcome {{loggedInUser?.username}} </span>
+            &nbsp;
+            <span class="loggedInUserDetails" (click)="Onlogout()" style="cursor: pointer">logout</span>
+      </div>
+      <div *ngIf="loggedInUser==null">
+        <span class="spacer"></span> 
+        <span > Welcome Guest </span>
+        &nbsp;
+        <span  (click)="login()" style="cursor: pointer;margin-right: 10px">login</span>
+       </div>
+    </div>
+
+    <div class="menu">
+        <div class="menu_title">
+            <span>ContactInfo</span>
+        </div>
+        <div class="spacer"></div>
+        <div class="menu_option">
+            <span class="menu_option_items" *ngFor="let m of menuBar">
+                <span *ngIf="!m['showSubMenu']">
+                    <button mat-button   routerLink="{{m['link']}}">{{m.title}}</button>
+                </span>
+                <span *ngIf="m['showSubMenu']">
+                    <button  mat-button  [matMenuTriggerFor]="submenue">{{m.title}}</button>
+                    <mat-menu #submenue="matMenu">
+                        <span *ngFor="let submenu of m.subMenus ">
+                            <button mat-menu-item routerLink="{{submenu['link']}}">{{submenu.title}}</button>
+                        </span>
+                    </mat-menu>
+                </span>
+            </span>
+        </div>
+
+    </div>
+
+</div>

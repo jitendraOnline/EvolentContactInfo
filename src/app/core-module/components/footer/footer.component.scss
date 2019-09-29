@@ -1,0 +1,21 @@
+.menu {
+  padding: 5px;
+  display: grid;
+  grid-template-columns: 1fr;
+  background-image: linear-gradient(to right,rgb(36, 45, 105), #9fb9dd);
+  color: white;
+
+  .menu_option {
+    margin: 5px;
+    display: inline;
+    .spacer {
+      font-size: 12px;
+      grid-column-start: 3/3;
+    }
+    .menu_option_items {
+      font-size: 12px;
+      display: inline;
+      padding-left: 10px;
+    }
+  }
+}

@@ -1,0 +1,42 @@
+.header {
+  display: grid;
+  grid-template-rows: min-content min-content;
+  color: white;
+  font-weight: 700px;
+  .menu_header {
+    padding: 5px;
+    font-size: 12px;
+   
+    background-image: linear-gradient(to right,rgb(36, 45, 105), #9fb9dd) ;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    .spacer {
+      grid-column: 1/1;
+    }
+  }
+  .menu {
+    padding: 5px;
+    display: grid;
+    grid-template-columns: min-content 1fr auto min-content;
+    background-image:linear-gradient(to right,rgb(36, 45, 105), #1e457b)  ;
+    // 
+
+    .menu_title {
+      margin: 5px;
+      padding-left: 10px;
+      padding-right: 10px;
+      justify-content: center;
+      justify-self: center;
+      :hover {
+        color: gold;
+        cursor: pointer;
+      }
+    }
+
+    .spacer {
+      font-size: 12px;
+      grid-column-start: 2/2;
+        
+    }
+  }
+}

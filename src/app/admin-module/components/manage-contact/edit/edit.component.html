@@ -1,0 +1,69 @@
+<div class="editForm">
+        <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" #form>
+        
+        <div class="fromLayout">
+                <div class="formGroups">
+                        <p>
+                                <mat-form-field appearance="legacy">
+                                    <mat-label>First Name</mat-label>
+                                    <input matInput autocomplete="off" placeholder="first Name" formControlName="firstName">
+                                </mat-form-field>
+                            </p>
+                        
+                            <p>
+                                <mat-form-field appearance="legacy">
+                                    <mat-label>Last Name</mat-label>
+                                    <input matInput autocomplete="off" placeholder="last Name" formControlName="lastName">
+                                </mat-form-field>
+                            </p>
+    
+                </div>
+                  
+                <div class="formGroups">
+                        <p>
+                                <mat-form-field appearance="legacy">
+                                    <mat-label>Email</mat-label>
+                                    <input matInput autocomplete="off" placeholder="email" formControlName="email">
+                                    <mat-icon matSuffix>email</mat-icon>
+                                </mat-form-field>
+                            </p>
+                        
+                            <p>
+                                <mat-form-field appearance="legacy">
+                                    <mat-label>Phone Number</mat-label>
+                                    <input matInput autocomplete="off" placeholder="phoneNumber" formControlName="phoneNumber">
+                                    <mat-icon matSuffix>phone</mat-icon>
+                                </mat-form-field>
+                            </p>
+    
+                </div>
+                
+               <div class="formGroups">
+                    <p>
+                            <mat-form-field appearance="legacy">
+                                <mat-label>status</mat-label>
+                                <input matInput autocomplete="off" placeholder="status" formControlName="status">
+                    
+                            </mat-form-field>
+                        </p>
+    
+                      
+               </div>
+        </div>    
+          
+                  
+             <div *ngIf="typeOfAction=='new'">
+                    <button  mat-raised-button color="primary" type="submit" [disabled]="!profileForm.valid">Add New Contact</button>
+             </div>
+             <div *ngIf="typeOfAction=='edit'">
+                    <button  mat-raised-button color="primary" type="submit" [disabled]="!profileForm.valid">Save</button>&nbsp;
+                    <button  mat-raised-button color="primary" type="submit" [disabled]="!profileForm.valid">Delete</button>&nbsp;
+                    <button  mat-raised-button color="primary" type="submit" [disabled]="!profileForm.valid">Cancell</button>   
+             </div>
+
+                
+            
+            </form>
+
+</div>
+

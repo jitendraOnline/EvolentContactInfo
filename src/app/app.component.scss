@@ -1,0 +1,16 @@
+.container{
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows:min-content 1fr min-content;
+    .header{
+        grid-row: 1/1;
+    }
+    .content{
+        margin: 10px;
+        grid-row: 2/2;
+    }
+    .footer{
+        grid-row: 3/3;
+    }
+
+}
