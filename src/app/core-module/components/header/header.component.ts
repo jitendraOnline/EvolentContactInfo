@@ -15,7 +15,7 @@ export class HeaderComponent implements OnInit {
 
   }
 
-
+loggedInUser;
   ngOnInit() {
     this.menuBar=this.app.getMenus(this.role);
   }
