@@ -6,7 +6,9 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoreModuleModule } from './core-module/core-module.module';
 import { SharedModuleModule } from './shared-module/shared-module.module';
-import { ContactModuleModule } from './contact-module/contact-module.module';
+import { ContactModuleModule } from './contacts-module/contacts-module.module';
+
+
 
 
 

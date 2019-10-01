@@ -1,0 +1,7 @@
+<a  *ngIf="!selectedContact" [routerLink]="[appUrlConstant.viewContactNav]" ><mat-icon>arrow_back</mat-icon></a>
+<a  *ngIf="selectedContact" [routerLink]="[appUrlConstant.viewContactNav,{id:selectedContact.id}]"><mat-icon>arrow_back</mat-icon></a>
+<h2>Manage Contact</h2>
+
+<mat-card>
+      <app-edit [editContact]="selectedContact"></app-edit>
+ </mat-card>

@@ -1,0 +1,114 @@
+<div class="editForm">
+    <form [formGroup]="profileForm"  #form>
+
+        <div class="fromLayout">
+            <div class="formGroups">
+                <p>
+                    <mat-form-field appearance="legacy">
+                        <mat-label>First Name</mat-label>
+                        <input matInput 
+                               autocomplete="off" 
+                               placeholder="first Name" 
+                               formControlName="firstName">
+                        <mat-error *ngIf="profileForm?.controls?.firstName?.errors?.required">
+                                {{constant.ERR_MANDATORY}}
+                        </mat-error>
+                    </mat-form-field>
+                </p>
+
+                    <p>
+                    <mat-form-field appearance="legacy">
+                        <mat-label>Last Name</mat-label>
+                        <input matInput 
+                               autocomplete="off" 
+                               placeholder="last Name" 
+                               formControlName="lastName">
+                        <mat-error *ngIf="profileForm?.controls?.lastName?.errors?.required">
+                                {{constant.ERR_MANDATORY}}
+                        </mat-error>
+                    </mat-form-field>
+               </p>
+
+            </div>
+
+            <div class="formGroups">
+                    <p>
+                    <mat-form-field appearance="legacy">
+                        <mat-label>Email</mat-label>
+                        <input matInput 
+                               autocomplete="off" 
+                               placeholder="email" 
+                               formControlName="email">
+                        <mat-icon matSuffix>email</mat-icon>
+                        <mat-error *ngIf="profileForm?.controls?.email?.errors?.required">
+                                {{constant.ERR_MANDATORY}}
+                        </mat-error>
+                        <mat-error *ngIf="profileForm?.controls?.email?.errors?.email">
+                                {{constant.ERR_EMAIL_INVALID}}
+                        </mat-error>
+                    </mat-form-field>
+               </p>
+               <p>
+                    <mat-form-field appearance="legacy">
+                        <mat-label>Phone Number</mat-label>
+                        <input matInput 
+                               type="number"
+                               autocomplete="off" 
+                               placeholder="phoneNumber" 
+                               formControlName="phoneNumber">
+                        <mat-icon matSuffix>phone</mat-icon>
+                        <mat-error *ngIf="profileForm?.controls?.phoneNumber?.errors?.required">
+                                {{constant.ERR_MANDATORY}}
+                        </mat-error>
+                    </mat-form-field>
+                    </p>
+            </div>
+            <div class="formGroups">
+                <p>
+                    <mat-form-field>
+                        <mat-label>Status</mat-label>
+                        <mat-select formControlName="status" name="food">
+                            <mat-option *ngFor="let status of ['Active','InActive']" [value]="status">
+                                {{status}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="profileForm?.controls?.status?.errors?.required">
+                                {{constant.ERR_MANDATORY}}
+                        </mat-error>
+                    </mat-form-field>
+                </p>
+            </div>
+        </div>
+
+        <div *ngIf="typeOfAction=='new'">
+            <button mat-raised-button 
+                    color="primary" 
+                    (click)="onSubmit()"
+                    [disabled]="!profileForm.valid"
+                    >
+                    {{constant.KEY_ADD_NEW}}  
+            </button>
+        </div>
+
+        <div *ngIf="typeOfAction=='edit'">
+            <button mat-raised-button 
+                    color="primary" 
+                    (click)="onSubmit()"
+                    [disabled]="!profileForm.valid">
+                    {{constant.KEY_UPDATE}}  
+            </button>
+            &nbsp;
+            <button mat-raised-button 
+                    color="primary"
+                    (click)="deleteContact()">
+                    {{constant.KEY_DELETE}}  
+            </button>
+            &nbsp;
+            <button mat-raised-button 
+                    color="primary" 
+                    (click)="resetToDefulat()">
+                    {{constant.KEY_CANCEL}}
+            </button>
+        </div>
+    </form>
+</div>
