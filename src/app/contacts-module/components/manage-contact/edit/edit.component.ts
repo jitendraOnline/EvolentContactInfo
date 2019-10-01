@@ -17,7 +17,7 @@ export class EditComponent implements OnInit {
   @Input('editContact') editContact: ContactModel;
   profileForm: any;
   typeOfAction = 'new';
-  constant=AppConstants;
+  constant = AppConstants;
 
   constructor(private fb: FormBuilder,
               private contactUserService: ContactUserService,
@@ -28,7 +28,7 @@ export class EditComponent implements OnInit {
     this.createNewContact();
     if (this.editContact) {
       this.editSelecctedContact(this.editContact);
-    } 
+    }
   }
 
   ngOnInit() {
@@ -47,7 +47,7 @@ export class EditComponent implements OnInit {
   createNewContact() {
     this.typeOfAction = 'new';
     this.profileForm = this.fb.group({
-      id:[''],
+      id: [''],
       firstName: ['', [Validators.required]],
       lastName: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
@@ -56,24 +56,24 @@ export class EditComponent implements OnInit {
       });
   }
 
-  
-  editSelecctedContact(contactInfo: ContactModel){
+
+  editSelecctedContact(contactInfo: ContactModel) {
     this.typeOfAction = 'edit';
     this.profileForm.patchValue(contactInfo);
-    console.log("value pathched");
+    console.log('value pathched');
   }
 
-  deleteContact(){
+  deleteContact() {
     this.contactUserService.deleteContact(this.editContact.id).subscribe((resposne) => {
       alert(resposne.message);
       this.router.navigate([AppConfigUrl.viewContactNav]);
     }, (error) => {
       alert(this.constant.GEN_ERR_MSG + ' ' + error.message);
-    })
+    });
   }
 
-  //method to reset to defult
-  resetToDefulat(){
+  // method to reset to defult
+  resetToDefulat() {
   this.editSelecctedContact(this.editContact);
   }
 

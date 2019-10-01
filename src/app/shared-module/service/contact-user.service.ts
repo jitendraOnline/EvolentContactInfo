@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { of, Observable, throwError } from 'rxjs';
 import { ContactModel } from 'src/app/core-module/model/contactModel';
 
@@ -56,19 +55,18 @@ export class ContactUserService {
    }
   }
 
-  deleteContact(id:string){
+  deleteContact(id: string) {
     const index = this.userList.findIndex((Obj) => Obj.id === id);
-    if(index !== -1){
-      this.userList.splice(index,1);
-      return of({operation: 'success', message: 'contact deleted successfully ', id: id});
+    if (index !== -1) {
+      this.userList.splice(index, 1);
+      return of({operation: 'success', message: 'contact deleted successfully ', id});
+    } else {
+      return throwError({operation: 'fail', message: 'failed to delete', id});
     }
-    else{
-      return throwError({operation: 'fail', message: 'failed to delete', id: id});
-    }
-   
+
   }
 
-  findUser(contactModelId: string):ContactModel {
+  findUser(contactModelId: string): ContactModel {
    return this.userList.find((Obj) => {
       return Obj.id == contactModelId;
     });

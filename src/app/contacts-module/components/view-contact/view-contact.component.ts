@@ -18,7 +18,7 @@ dataSource: MatTableDataSource<ContactModel>;
 @ViewChild(MatPaginator, {static: false}) paginator: MatPaginator;
 @ViewChild(MatSort, {static: false}) sort: MatSort;
 contactList: ContactModel[]  = [];
-constant=AppConstants;
+constant = AppConstants;
 displayedColumns = ['name', 'email', 'phoneNumber', 'status', 'action'];
 
 ngAfterViewInit() {

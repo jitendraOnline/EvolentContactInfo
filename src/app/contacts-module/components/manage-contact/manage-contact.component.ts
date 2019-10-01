@@ -17,12 +17,12 @@ constructor(private activatedRoute: ActivatedRoute,
 
 contactList: ContactModel[] = [];
 selectedContact: ContactModel;
-appUrlConstant=AppConfigUrl;
+appUrlConstant = AppConfigUrl;
   ngOnInit() {
     this.activatedRoute.paramMap.subscribe((params: ParamMap) => {
       const paramas = params['params'];
-      if(paramas['id']){
-        this.selectedContact = this.contactService.findUser(paramas['id']); 
+      if (paramas['id']) {
+        this.selectedContact = this.contactService.findUser(paramas['id']);
         if (!this.selectedContact ) {
           alert('invaid id was passed in url');
         }

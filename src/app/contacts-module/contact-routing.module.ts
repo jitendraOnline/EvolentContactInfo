@@ -7,7 +7,7 @@ import { ViewContactComponent } from './components/view-contact/view-contact.com
 
 
 const routes: Routes = [
-                      {path: AppConfigUrl.viewContactRoute, 
+                      {path: AppConfigUrl.viewContactRoute,
                        component: ViewContactComponent
                       },
                       { path: AppConfigUrl.manageContactRoute,
