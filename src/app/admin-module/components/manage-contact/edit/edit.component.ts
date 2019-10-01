@@ -47,6 +47,7 @@ export class EditComponent implements OnInit {
   createNewContact() {
     this.typeOfAction = 'new';
     this.profileForm = this.fb.group({
+      id:[''],
       firstName: ['', [Validators.required]],
       lastName: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
