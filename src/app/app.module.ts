@@ -6,13 +6,13 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoreModuleModule } from './core-module/core-module.module';
 import { SharedModuleModule } from './shared-module/shared-module.module';
-import { AdminModuleModule } from './admin-module/admin-module.module';
-import { ViewContactComponent } from './components/view-contact/view-contact.component';
+import { ContactModuleModule } from './contact-module/contact-module.module';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    ViewContactComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +20,7 @@ import { ViewContactComponent } from './components/view-contact/view-contact.com
     BrowserAnimationsModule,
     CoreModuleModule,
     SharedModuleModule,
-    AdminModuleModule
+    ContactModuleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
