@@ -72,6 +72,7 @@ export class EditComponent implements OnInit {
     })
   }
 
+  //method to reset to defult
   resetToDefulat(){
   this.editSelecctedContact(this.editContact);
   }
