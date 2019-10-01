@@ -4,42 +4,42 @@
      link: string;
      showMenu: boolean;
      showSubMenu: boolean;
-     subMenus: Array<SubMenu> 
+     subMenus: Array<SubMenu>;
  }
 
-class SubMenu {
+ class SubMenu {
     title: string;
     link: string;
     showSubMenuItem: boolean;
- } 
+ }
 
-const adminMenus: Menu[] = [
+ const adminMenus: Menu[] = [
   {
     title: ' ',
-    link: "",
+    link: '',
     showMenu: true,
     showSubMenu: false,
-    subMenus:[]
+    subMenus: []
   },
 ];
 
-const usersMenu: Menu[] = [
+ const usersMenu: Menu[] = [
   {
     title: 'ViewContact',
     link: adminMenus[0].link,
     showMenu: true,
     showSubMenu: false,
-    subMenus:[]
+    subMenus: []
   },
 ];
 
-export class AppMenus {
-    getMenus(role: string): Menu[]{
-      if(role == 'Admin'){
-        return <Menu[]>adminMenus;
-     
-      }else {
-        return <Menu[]>usersMenu;
+ export class AppMenus {
+    getMenus(role: string): Menu[] {
+      if (role == 'Admin') {
+        return adminMenus as Menu[];
+
+      } else {
+        return usersMenu as Menu[];
       }
     }
 }

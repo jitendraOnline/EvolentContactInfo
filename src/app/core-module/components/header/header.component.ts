@@ -5,21 +5,21 @@ import { AppMenus } from '../../model/app-menus';
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
-  viewProviders:[AppMenus]
+  viewProviders: [AppMenus]
 })
 export class HeaderComponent implements OnInit {
 
-  private role:string='Admin';
+  private role = 'Admin';
   menuBar;
-  constructor(private app:AppMenus) { 
+  constructor(private app: AppMenus) {
 
   }
 
 loggedInUser;
   ngOnInit() {
-    this.menuBar=this.app.getMenus(this.role);
+    this.menuBar = this.app.getMenus(this.role);
   }
 
-  login(){};
-  logout(){};
+  login() {}
+  logout() {}
 }

@@ -10,6 +10,6 @@ import { SharedModuleModule } from '../shared-module/shared-module.module';
     CommonModule,
     SharedModuleModule
   ],
-  exports:[HeaderComponent, FooterComponent]
+  exports: [HeaderComponent, FooterComponent]
 })
 export class CoreModuleModule { }

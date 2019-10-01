@@ -1,24 +1,7 @@
-<a  *ngIf="!selectedContact" [routerLink]="['/viewContact']" ><mat-icon>arrow_back</mat-icon></a>
-<a  *ngIf="selectedContact" [routerLink]="['/viewContact',{id:selectedContact.id}]"><mat-icon>arrow_back</mat-icon></a>
+<a  *ngIf="!selectedContact" [routerLink]="[appUrlConstant.viewContactNav]" ><mat-icon>arrow_back</mat-icon></a>
+<a  *ngIf="selectedContact" [routerLink]="[appUrlConstant.viewContactNav,{id:selectedContact.id}]"><mat-icon>arrow_back</mat-icon></a>
 <h2>Manage Contact</h2>
 
-<!-- <mat-drawer-container class="container" >
-    <mat-drawer #drawer mode="side" ><mat-icon (click)="drawer.toggle()">close</mat-icon>
-        <div *ngFor="let contact of contactList">
-                <app-list-contact [contact]="contact" (click)="selectContact(contact)"></app-list-contact>
-        </div>
-        
-    </mat-drawer>
-    <mat-drawer-content>
-       <mat-card >
-          <app-edit [editContact]="selectedContact"></app-edit>
-           <router-outlet></router-outlet> 
-       </mat-card>
-       
-       <button mat-raised-button (click)="drawer.toggle()">Toggle drawer</button> 
-    </mat-drawer-content>
-  </mat-drawer-container> -->
-
-  <mat-card >
+<mat-card>
       <app-edit [editContact]="selectedContact"></app-edit>
-   </mat-card>
+ </mat-card>
